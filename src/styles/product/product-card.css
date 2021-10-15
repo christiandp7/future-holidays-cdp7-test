@@ -1,0 +1,23 @@
+.ProductCard {
+	@apply h-full;
+
+	& .ProductCard__link {
+		@apply flex flex-col;
+		@apply h-full;
+	}
+	& .ProductCard__image {
+		@apply flex-grow;
+		& img {
+			@apply h-full object-cover;
+		}
+	}
+	& .ProductCard__details {
+		@apply py-2;
+	}
+	& .ProductCard__title {
+		@apply text-body;
+	}
+	& .ProductCard__price {
+		@apply font-bold text-tiny;
+	}
+}
