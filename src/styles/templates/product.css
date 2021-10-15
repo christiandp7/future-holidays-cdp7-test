@@ -14,7 +14,7 @@
 		@apply text-3xl lg:text-4xl mb-4;
 	}
 	& .Product__price {
-		@apply font-bold mb-5;
+		@apply mb-5;
 	}
 	& .Product__description {
 		& p {
@@ -26,8 +26,4 @@
 		@apply text-body;
 		text-underline-offset: 1px;
 	}
-}
-
-.AddToCartForm {
-	@apply my-10;
 }

@@ -17,6 +17,8 @@
 @import './common/content.css';
 /* Product */
 @import './product/product-card.css';
+@import './product/product-option.css';
+@import './product/add-to-cart-form.css';
 /* Cart */
 @import './cart/cart-list.css';
 @import './cart/cart-list-item.css';

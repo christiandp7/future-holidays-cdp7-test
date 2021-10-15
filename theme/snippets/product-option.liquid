@@ -1,6 +1,8 @@
 <div class="ProdcutOption">
+  <h3 class="ProducOption__name">${ option.name }</h3>
   <div class="ProductOption__label" @click="option.visible = !option.visible" :class="{ labelActive: option.visible }">
-    ${ option.name }: <span>${ selected[i] }</span>
+    <span>${ selected[i] }</span>
+    <i class="ProductOption__label--arrow">{% render 'icon-chevron-down' %}</i>
   </div>
   <div class="ProductOption__list" v-if="option.visible">
     <template v-for="(value, index) in option.values">

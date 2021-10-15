@@ -11,6 +11,7 @@ module.exports = {
 				'primary-accent': '#1B2B17',
 				'primary-dark': '#1C2619',
 				'primary-text': '#000000',
+				muted: '#AEADAB',
 				'mjh-white': '#FAF9F6',
 				'mjh-cream': '#F5F3EE',
 				'mjh-gray': '#E8E6E1',

@@ -1,0 +1,34 @@
+.ProdcutOption {
+	@apply relative;
+	@apply my-4;
+
+	& .ProducOption__name {
+		@apply text-body uppercase tracking-wider mb-2;
+	}
+
+	& .ProductOption__label {
+		@apply relative w-full h-[50px];
+		@apply flex justify-center items-center;
+		@apply bg-mjh-white;
+		@apply cursor-pointer;
+
+		& .ProductOption__label--arrow {
+			@apply absolute top-1/2 right-3;
+			@apply -translate-y-1/2;
+		}
+	}
+
+	& .ProductOption__list {
+		@apply absolute;
+		@apply w-full;
+		@apply z-10;
+	}
+
+	& .ProductOption__item {
+		@apply w-full h-[50px];
+		@apply px-3;
+		@apply flex justify-start items-center;
+		@apply bg-mjh-white hover:bg-mjh-gray text-muted hover:text-primary-text;
+		@apply cursor-pointer;
+	}
+}

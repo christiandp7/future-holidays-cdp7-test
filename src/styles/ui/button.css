@@ -10,14 +10,16 @@
 	}
 
 	/* btn modifiers */
-	.btn-full {
-		@apply w-full;
-	}
 	.btn-sm {
 		@apply py-2 px-4;
 	}
 	.btn-lg {
-		@apply py-4 px-8;
+		@apply py-0 px-8;
+		@apply flex justify-center items-center;
+		@apply w-auto h-[50px];
+	}
+	.btn-full {
+		@apply w-full;
 	}
 
 	/* btn variants */
