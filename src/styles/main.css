@@ -8,6 +8,7 @@
 @import './ui/typography.css';
 /* Templates */
 @import './templates/collection.css';
+@import './templates/product.css';
 /* Common */
 @import './common/header.css';
 @import './common/footer.css';

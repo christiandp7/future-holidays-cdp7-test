@@ -1,0 +1,87 @@
+{%- comment -%}
+<form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
+  <select name="id" id="productSelect">
+    {% for variant in product.variants %}
+    {% if variant.available %}
+    <option value="{{ variant.id }}">
+      {{ variant.title }} - {{ variant.price | money_with_currency }}
+    </option>
+    {% else %}
+    <option disabled="disabled">
+      {{ variant.title }} - sold out
+    </option>
+    {% endif %}
+    {% endfor %}
+  </select>
+  {{ current_variant.price | money }}
+  <label for="Quantity">quantity</label>
+  <input type="number" id="Quantity" name="quantity" value="1" min="1">
+  <button type="submit" name="add" id="AddToCart">Add to cart ></button>
+</form>
+{%- endcomment -%}
+
+<form id="addToCartForm">
+
+  <template v-for="(option, i) in form.options" :key="i">
+    <div>
+      {% render 'product-option' %}
+    </div>
+  </template>
+
+  <button @click="addToCart" type="submit" name="add" class="btn btn-full btn-large add-to-cart-button">Add to cart</button>
+</form>
+
+<script>
+    const productForm = Vue.createApp({
+      compilerOptions: {
+        delimiters: ['${', '}']
+      },
+      data() {
+        return {
+          open: false,
+          variants: "",
+          selected: [],
+          form: {
+            selections: "",
+            options: ""
+          }
+        }
+      },
+      created() {
+        axios.get("/products/{{ product.handle }}.js")
+          .then(resp => {
+            console.log(resp)
+            this.form.options = resp.data.options.map(item => ({ ...item, visible: false }))
+            this.variants = resp.data.variants
+            resp.data.options.map(item => this.selected.push(item.values[0]))
+            this.form.selections = [
+              this.selected[0] ? this.selected[0] : null,
+              this.selected[1] ? this.selected[1] : null,
+              this.selected[2] ? this.selected[2] : null
+            ]
+          })
+      },
+      methods: {
+        addToCart(e) {
+          e.preventDefault()
+          let selectedVariant
+          this.variants.forEach((variant, i) => {
+            if (variant.option1 === this.form.selections[0] && variant.option2 === this.form.selections[1] && variant.option3 === this.form.selections[2]) {
+              selectedVariant = variant
+            }
+          })
+          let data = {
+            id: selectedVariant.id,
+            quantity: 1
+          }
+          axios.post('/cart/add.js', data)
+            .then((resp) => {
+              console.log(resp)
+            })
+            .catch(error => {
+              console.log(error)
+            })
+        }
+      }
+    }).mount('#addToCartForm')
+</script>
