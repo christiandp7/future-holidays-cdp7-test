@@ -7,6 +7,8 @@
 @import './ui/link.css';
 @import './ui/typography.css';
 @import './ui/transitions.css';
+@import './ui/spinner.css';
+@import './ui/swiper.css';
 /* Templates */
 @import './templates/collection.css';
 @import './templates/product.css';
@@ -17,6 +19,8 @@
 @import './common/content.css';
 /* Product */
 @import './product/product-card.css';
+@import './product/product-option.css';
+@import './product/add-to-cart-form.css';
 /* Cart */
 @import './cart/cart-list.css';
 @import './cart/cart-list-item.css';
