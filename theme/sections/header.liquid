@@ -54,7 +54,7 @@
       </div>
       <div class="Header__center">
         <a href="#" class="Header__logo--container">
-          <img src="" class="Header__logo" alt="logo" />
+          <img src="{{ section.settings.logo | img_url: '130x' }}" class="Header__logo" alt="logo" />
         </a>
       </div>
       <div class="Header__right">
@@ -87,7 +87,11 @@
   "name": "Header",
   "class": "header-section",
   "settings": [
-    
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    }
   ]
 }
 {% endschema %}
