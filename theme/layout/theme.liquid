@@ -8,6 +8,14 @@
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   {{ content_for_header }} <!-- Header hook for plugins -->
+  <!-- Swipper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <!-- Axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- Vue 3 -->
+  <script src="https://unpkg.com/vue@3.0.5"></script>
+  <!-- <script src="https://unpkg.com/vue@3.0.5/dist/vue.global.prod.js"></script> -->
   {{ 'application.css' | asset_url | stylesheet_tag }}
   {{ 'styles.css' | asset_url | stylesheet_tag }}
   {{ 'application.js' | asset_url | script_tag }}
@@ -21,6 +29,8 @@
   </main>
 
   {% section 'footer' %}
+
+  {% section 'cart-sidebar' %}
 
 </body>
 </html>

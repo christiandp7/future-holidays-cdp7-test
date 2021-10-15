@@ -1,0 +1,83 @@
+<div id="cart-page" class="Cart container page" data-section-id="{{ section.id }}">
+  <h1 class="Cart__tile">Cart</h1>
+  <p class="Cart__subtitle">
+    <a class="link" href="/collection/all">
+      continue Shopping
+    </a>
+  </p>
+
+  {% if cart.item_count > 0 %}
+    {% render 'cart-list' %}
+  {% else %}
+    <p class="text-center">Your Bag is empty</p>
+  {% endif %}
+
+</div>
+
+<script>
+  const cartPage = Vue.createApp({
+    delimiters: ['${', '}'],
+    data() {
+      return {
+        cartData: store.state.cartState,
+      }
+    },
+    methods: {
+      decrement(item) {
+        const data = {
+          "id": item.key,
+          "quantity": item.quantity - 1
+        }
+        axios.post('/cart/change.js', data)
+          .then(response => {
+            store.getCart()
+          })
+          .catch(error => console.log(error))
+      },
+      increment(item) {
+        const data = {
+          "id": item.key,
+          "quantity": item.quantity + 1
+        }
+        axios.post('/cart/change.js', data)
+          .then(response => {
+            store.getCart()
+          })
+          .catch(error => console.log(error))
+      },
+      remove(item) {
+        const data = {
+          "id": item.key,
+          "quantity": 0
+        }
+        axios.post('/cart/change.js', data)
+          .then(response => {
+            store.getCart()
+          })
+          .catch(error => console.log(error))
+      },
+      money(value) {
+        if (!value) return 0
+        return "$" + (value / 100).toFixed(2)
+      }
+
+    },
+    computed: {
+      cart() {
+        return this.cartData[0]
+      }
+    },
+    created() {
+      store.getCart()
+    }
+  }).mount('#cart-page')
+</script>
+
+{% schema %}
+{
+  "name": "Cart",
+  "class": "cart-section",
+  "settings": [
+  ]
+}
+{% endschema %}

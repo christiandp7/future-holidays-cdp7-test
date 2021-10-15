@@ -1,0 +1,55 @@
+.CartListItem {
+	@apply flex;
+	@apply bg-mjh-white;
+	@apply px-2 py-3 mb-4 lg:mb-8;
+	@apply shadow-sm;
+
+	& > .CartListItem__cell:not(:first-child) {
+		@apply w-1/6;
+		@apply flex justify-center items-end;
+		&.CartListItem__price {
+			@apply w-2/12 lg:w-1/6;
+			@apply justify-between lg:justify-center;
+			@apply flex-col lg:flex-row;
+			@apply items-center lg:items-end;
+		}
+		&.CartListItem__quantity,
+		&.CartListItem__total {
+			@apply hidden lg:flex;
+		}
+	}
+	& > .CartListItem__cell:first-child {
+		@apply w-10/12 lg:w-3/6;
+	}
+	& .CartListItem__cell {
+		@apply p-0 md:p-2 lg:p-5;
+	}
+
+	/* card */
+	& .CartListItem__card {
+		@apply flex;
+	}
+	& .CartListItem__image {
+		@apply w-[38%] max-w-[130px];
+	}
+	& .CartListItem__data {
+		@apply flex-grow;
+	}
+	& .CartListItem__details {
+		@apply flex-grow;
+		@apply flex flex-col justify-between;
+		@apply pl-3 md:pl-5 pt-1;
+	}
+	& .CartListItem__details--top {
+		& h4 {
+			@apply text-body md:text-base leading-tight md:leading-normal;
+			@apply mb-1;
+		}
+	}
+	& .CartListItem__details--options {
+		@apply text-tiny md:text-body;
+	}
+	& .Price__cart-item {
+		@apply block pt-1 lg:pt-0;
+	}
+}

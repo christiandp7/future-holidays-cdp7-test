@@ -1,0 +1,6 @@
+@layer components {
+	.spinner {
+		@apply w-8 h-8 border-4 border-primary rounded-full animate-spin;
+		border-right-color: transparent;
+	}
+}

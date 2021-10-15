@@ -1,0 +1,8 @@
+.Cart {
+	& .Cart__tile {
+		@apply page-title;
+	}
+	& .Cart__subtitle {
+		@apply page-subtitle;
+	}
+}

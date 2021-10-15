@@ -1,0 +1,43 @@
+<div class="CartListItem">
+  <div class="CartListItem__data CartListItem__cell">
+    <div class="CartListItem__card">
+      <div class="CartListItem__image">
+        <img class="CartListItem__image--img" :src="item.image" :alt="item.title" />
+      </div>
+      <div class="CartListItem__details">
+        <div class="CartListItem__details--top">
+          <h4>${ item.title }</h4>
+          <div class="CartListItem__details--options">
+            Black / Small
+          </div>
+        </div>
+        <div class="CartListItem__details--bottom">
+          <button @click="remove(item)" class="btn btn-with-icon btn-secondary-hollow hidden lg:flex">
+            Remove
+          </button>
+          <div class="QtySelector lg:hidden">
+            <button class="btn btn-icon btn-icon-xs btn-rounded btn-secondary" @click="decrement(item)">-</button>
+            <div class="QtySelector__counter">${ item.quantity }</div>
+            <button class="btn btn-icon btn-icon-xs btn-rounded btn-secondary" @click="increment(item)">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="CartListItem__price CartListItem__cell">
+    <button @click="remove(item)" class="btn btn-icon btn-rounded btn-secondary lg:hidden">
+      t
+    </button>
+    <span class="Price__cart-item">${ money(item.price) }</span>
+  </div>
+  <div class="CartListItem__quantity CartListItem__cell">
+    <div class="QtySelector QtySelector__lg">
+      <button class="btn btn-icon btn-rounded btn-secondary" @click="decrement(item)">-</button>
+      <div class="QtySelector__counter QtySelector__counter--lg">${ item.quantity }</div>
+      <button class="btn btn-icon btn-rounded btn-secondary" @click="increment(item)">+</button>
+    </div>
+  </div>
+  <div class="CartListItem__total CartListItem__cell">
+    ${ money(item.final_line_price) }
+  </div>
+</div>
