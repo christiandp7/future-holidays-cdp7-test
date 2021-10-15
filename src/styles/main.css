@@ -1,3 +1,12 @@
-@tailwind base;
+@import './base.css';
+@import './base/fonts.css';
+/* UI */
+@import './ui/layout.css';
+@import './ui/button.css';
+@import './ui/link.css';
+@import './ui/typography.css';
+/* Common */
+@import './common/header.css';
+
 @tailwind components;
 @tailwind utilities;

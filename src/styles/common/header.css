@@ -1,0 +1,53 @@
+.Header {
+	@apply shadow-sm;
+
+	& .Header__inner {
+		@apply flex items-center;
+		@apply py-2 lg:py-4 px-2 lg:px-3;
+	}
+
+	& .Header__left,
+	& .Header__right {
+		@apply w-2/5;
+		@apply flex lg:justify-between items-center;
+	}
+	& .Header__left {
+		@apply justify-start;
+	}
+	& .Header__right {
+		@apply justify-end;
+	}
+	& .Header__center {
+		@apply w-1/5;
+		@apply flex justify-center items-center;
+	}
+	& .Header__nav {
+		@apply flex-grow;
+		@apply hidden lg:block;
+	}
+	& .Header__linklist {
+		@apply flex justify-center;
+		& > li {
+			@apply mx-3;
+		}
+		& a {
+			@apply uppercase tracking-wider text-tiny;
+		}
+	}
+
+	& .Header__logo {
+		@apply max-w-[36px] md:max-w-[50px] lg:max-w-[60px];
+	}
+
+	& .Header__search {
+		@apply p-1 pl-0;
+		@apply hidden lg:flex;
+	}
+	& .Header__burger {
+		@apply p-1 pl-0;
+		@apply lg:hidden;
+	}
+	& .Header__bag {
+		@apply p-1 pr-0;
+	}
+}
