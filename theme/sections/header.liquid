@@ -24,8 +24,7 @@
 
 
 
-<div class="section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="Header-height-section">
-  <header className="Header">
+  <header className="Header" data-section-id="{{ section.id }}">
     <div className="Header__inner container">
       <div className="Header__left">
         <button className="Header__search">search</button>
@@ -80,12 +79,11 @@
       </div>
     </div>
   </header>
-</div>
 
 {% schema %}
 {
   "name": "Header",
-  "class": "",
+  "class": "header-section",
   "settings": [
     
   ]
