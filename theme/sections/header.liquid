@@ -30,7 +30,7 @@
     <div class="Header__inner container">
       <div class="Header__left">
         <button class="Header__search">search</button>
-        <button class="Header__burger" @click="toggleMenu">menu</button>
+        <button class="Header__burger">menu</button>
   
         <nav class="Header__nav">
           <ul class="Header__linklist">
@@ -85,8 +85,6 @@
       </div>
     </div>
   </header>
-
-  <div :class="{ hidden: miniCart }">Hola</div>
     
 <script>
     if (document.querySelector('#header')) {
@@ -101,7 +99,6 @@
             openCartSidebar() {
               store.openCartSidebar()
             },
-
 
           },
           computed: {
