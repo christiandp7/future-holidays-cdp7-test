@@ -9,7 +9,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   {{ content_for_header }} <!-- Header hook for plugins -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://unpkg.com/vue@3.0.5"></script>
+  <!-- <script src="https://unpkg.com/vue@3.0.5/dist/vue.global.prod.js"></script> -->
   {{ 'application.css' | asset_url | stylesheet_tag }}
   {{ 'styles.css' | asset_url | stylesheet_tag }}
   {{ 'application.js' | asset_url | script_tag }}
@@ -23,6 +24,8 @@
   </main>
 
   {% section 'footer' %}
+
+  {% section 'cart-sidebar' %}
 
 </body>
 </html>

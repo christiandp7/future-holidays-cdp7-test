@@ -1,0 +1,37 @@
+
+<form class="CartList" action="/cart" method="post" novalidate>
+  <div class="CartList__header">
+    <div class="CartList__cell"></div>
+    <div class="CartList__cell">Price</div>
+    <div class="CartList__cell">Quantity</div>
+    <div class="CartList__cell">Total</div>
+  </div>
+  <div class="CartList__body">
+
+    {% for item in cart.items %}
+      {% render 'cart-list-item', item: item %}
+    {% endfor %}
+      
+  </div>
+  <div class="CartList__footer">
+    <div class="CartList__order-note">
+      <h4 class="h4">Order Note</h4>
+      <textarea name="order-note" id="" rows="3" placeholder="Eg: Thank You"></textarea>
+    </div>
+    <div class="CartList__summary">
+      <div class="CartList__summary--heading">
+        <h4 class="h4">Subtotal:</h4>
+        <div class="CartList__summary--subtotal">{{ cart.total_price | money }}</div>
+      </div>
+      <p class="text-body mt-4 mb-8">
+        Shipping, taxes, and discounts codes calculated at checkout.
+      </p>
+      <div class="CartList__summary--buttons">
+        <button class="btn btn-secondary btn-full">
+          update cart
+        </button>
+        <button name="checkout" class="btn btn-full">checkout</button>
+      </div>
+    </div>
+  </div>
+</form>

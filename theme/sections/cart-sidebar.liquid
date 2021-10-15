@@ -1,0 +1,119 @@
+<div id="cart-sidebar-component">
+  <div class="CartSidebar" :class="{ 'translate-x-0': cartOpen }">
+    <div class="CartSidebar__header">
+      <div class="CartSidebar__header--wrapper">
+        <h3>
+          <a href="/cart" class="link">
+            Cart
+          </a>
+        </h3>
+        <button @click="closeCartSidebar" class="btn btn-icon btn-transparent btn-rounded">
+          X
+        </button>
+      </div>
+    </div>
+    <template v-if="cart && cart.items.length > 0">
+      <div class="CartSidebar__body">
+        <div v-for="item in cart.items">
+          {% render 'cart-sidebar-item', item: item %}
+        </div>
+      </div>
+      <div class="CartSidebar__footer">
+        <div class="CartSidebar__order-note">
+          <h4 class="h4">Order Note</h4>
+          <textarea name="order-note" id="" rows="2" placeholder="Eg: Thank You"></textarea>
+        </div>
+        <div class="CartSidebar__summary">
+          <div class="CartSidebar__summary--heading">
+            <h4 class="h4">Subtotal:</h4>
+            <div class="CartSidebar__summary--subtotal">${ money(cart.total_price) }</div>
+          </div>
+          <p class="text-body mt-1 mb-4">
+            Shipping, taxes, and discounts codes calculated at checkout.
+          </p>
+          <div class="CartSidebar__summary--buttons">
+            <button class="btn btn-full">checkout</button>
+          </div>
+        </div>
+      </div>
+    </template>
+    
+    <template v-else>
+      <p class="CartSidebar__empty text-center">Your Bag is empty</p>
+    </template>
+  </div>
+
+  <transition name="fade">
+    <div class="drawer-backdrop" @click="closeCartSidebar" v-if="cartOpen"></div>
+  </transition>
+
+</div>
+
+
+<script>
+    const cartSidebar = Vue.createApp({
+      delimiters: ['${', '}'],
+      data() {
+        return {
+          cartData: store.state.cartState,
+        }
+      },
+      methods: {
+        openCartSidebar() {
+          store.openCartSidebar()
+        },
+        closeCartSidebar() {
+          store.closeCartSidebar()
+        },
+        decrement(item) {
+          const data = {
+            "id": item.key,
+            "quantity": item.quantity - 1
+          }
+          axios.post('/cart/change.js', data)
+            .then(response => {
+              store.getCart()
+            })
+            .catch(error => console.log(error))
+        },
+        increment(item) {
+          const data = {
+            "id": item.key,
+            "quantity": item.quantity + 1
+          }
+          axios.post('/cart/change.js', data)
+            .then(response => {
+              store.getCart()
+            })
+            .catch(error => console.log(error))
+        },
+        remove(item) {
+          const data = {
+            "id": item.key,
+            "quantity": 0
+          }
+          axios.post('/cart/change.js', data)
+            .then(response => {
+              store.getCart()
+            })
+            .catch(error => console.log(error))
+        },
+        money(value) {
+          if (!value) return 0
+          return "$" + (value / 100).toFixed(2)
+        }
+
+      },
+      computed: {
+        cartOpen() {
+          return store.state.cartSidebar.open
+        },
+        cart() {
+          return this.cartData[0]
+        }
+      },
+      created() {
+        store.getCart()
+      }
+    }).mount('#cart-sidebar-component')
+</script>

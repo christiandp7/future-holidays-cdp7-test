@@ -1,0 +1,55 @@
+.CartSidebarItem {
+	@apply flex;
+	@apply bg-mjh-white;
+	@apply px-2 py-2 mb-3;
+	@apply shadow-sm;
+
+	& .CartSidebarItem__price {
+		@apply w-2/12 lg:w-1/6;
+		@apply justify-between;
+		@apply flex flex-col;
+		@apply items-center;
+	}
+
+	& .CartSidebarItem__cell {
+		@apply p-0 md:p-2;
+	}
+
+	/* card */
+	& .CartSidebarItem__card {
+		@apply flex;
+	}
+	& .CartSidebarItem__image {
+		@apply w-[38%] max-w-[130px];
+	}
+	& .CartSidebarItem__data {
+		@apply flex-grow;
+	}
+	& .CartSidebarItem__details {
+		@apply flex-grow;
+		@apply flex flex-col justify-between;
+		@apply pl-3 pt-1;
+	}
+	& .CartSidebarItem__details--top {
+		& h4 {
+			@apply text-body leading-tight;
+			@apply mb-1;
+		}
+	}
+	& .CartSidebarItem__details--options {
+		@apply text-tiny;
+	}
+	& .Price__cart-item {
+		@apply block pt-1 text-body;
+	}
+}
+
+.QtySelector {
+	@apply flex items-center;
+	& .QtySelector__counter {
+		@apply mx-2 text-xs;
+	}
+	& .btn {
+		@apply text-xs;
+	}
+}

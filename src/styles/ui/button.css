@@ -27,6 +27,9 @@
 		@apply hover:bg-mjh-gray active:bg-mjh-gray;
 		@apply p-0;
 		line-height: 1;
+		&.btn-icon-xs {
+			@apply w-[20px] h-[20px] text-tiny;
+		}
 		&.btn-icon-sm {
 			@apply w-[24px] h-[24px] text-tiny;
 		}
