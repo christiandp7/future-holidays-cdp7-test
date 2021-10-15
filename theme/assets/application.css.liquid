@@ -1,2 +1,22 @@
-// Put your styles in this file.
-// Note: "@import" rules aren’t supported.
+	@font-face {
+		font-family: 'Avenir Next';
+		font-weight: 200;
+		src: url('{{"AvenirNextLTPro-UltLt.otf" | asset_url }}') format('opentype');
+	}
+	@font-face {
+		font-family: 'Avenir Next';
+		font-weight: 400;
+		src: url('{{ "AvenirNextLTPro-Regular.otf" | asset_url }}') format('opentype');
+	}
+	@font-face {
+		font-family: 'Avenir Next';
+		font-weight: 600;
+		src: url('{{ "AvenirNextLTPro-Demi.otf" | asset_url }}') format('opentype');
+	}
+	@font-face {
+		font-family: 'Ogg-Roman';
+		font-weight: 400;
+		src: url('{{ "Ogg-roman.woff2" | asset_url }}') format('woff2'),
+			url('{{ "Ogg-roman.woff" | asset_url }}') format('woff'),
+			url('{{ "Ogg-roman.ttf" | asset_url }}') format('truetype');
+	}
