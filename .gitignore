@@ -8,5 +8,6 @@ yarn.lock
 
 yarn-error.log
 
-/theme/assets/styles.css
-/theme/assets/main.js
+theme/assets/styles.css
+
+theme/assets/main.js
