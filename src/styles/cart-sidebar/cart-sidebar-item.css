@@ -48,8 +48,16 @@
 	@apply flex items-center;
 	& .QtySelector__counter {
 		@apply mx-2 text-xs;
+		&.QtySelector__counter--lg {
+			@apply mx-5 text-base;
+		}
 	}
 	& .btn {
 		@apply text-xs;
+	}
+	&.QtySelector__lg {
+		& .btn {
+			@apply text-lg;
+		}
 	}
 }
