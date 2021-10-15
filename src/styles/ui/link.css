@@ -1,0 +1,7 @@
+@layer components {
+	.link {
+		@apply hover:underline p-1;
+		text-underline-offset: 3px;
+		text-decoration-thickness: 1px;
+	}
+}

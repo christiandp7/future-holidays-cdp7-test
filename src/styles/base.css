@@ -1,0 +1,12 @@
+@tailwind base;
+
+body {
+	@apply font-avenir bg-mjh-cream;
+}
+
+p,
+a,
+li,
+span {
+	@apply tracking-wide;
+}
