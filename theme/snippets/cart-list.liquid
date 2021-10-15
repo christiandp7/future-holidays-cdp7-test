@@ -9,7 +9,7 @@
   <div class="CartList__body">
 
     {% for item in cart.items %}
-      {% render 'cart-list-item' %}
+      {% render 'cart-list-item', item: item %}
     {% endfor %}
       
   </div>

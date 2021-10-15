@@ -9,12 +9,16 @@
 /* Templates */
 @import './templates/collection.css';
 @import './templates/product.css';
+@import './templates/cart.css';
 /* Common */
 @import './common/header.css';
 @import './common/footer.css';
 @import './common/content.css';
 /* Product */
 @import './product/product-card.css';
+/* Cart */
+@import './cart/cart-list.css';
+@import './cart/cart-list-item.css';
 
 @tailwind components;
 @tailwind utilities;

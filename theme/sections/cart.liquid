@@ -1,7 +1,7 @@
 <div class="Cart container page" data-section-id="{{ section.id }}">
   <h1 class="Cart__tile">Cart</h1>
   <p class="Cart__subtitle">
-    <a class="link" href="{{ section.settings.continue_url }}">
+    <a class="link" href="/collection/all">
       continue Shopping
     </a>
   </p>
@@ -19,12 +19,6 @@
   "name": "Cart",
   "class": "cart-section",
   "settings": [
-    {
-      "type": "url",
-      "id": "continue_url",
-      "label": "Continue Shopping URL",
-      "default": "/collection/all"
-    },
   ]
 }
 {% endschema %}
