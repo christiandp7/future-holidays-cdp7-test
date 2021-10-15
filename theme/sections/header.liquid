@@ -26,11 +26,11 @@
       
       
       
-  <header class="Header" data-section-id="{{ section.id }}">
+  <header id="header" class="Header" data-section-id="{{ section.id }}">
     <div class="Header__inner container">
       <div class="Header__left">
         <button class="Header__search">search</button>
-        <button class="Header__burger">menu</button>
+        <button class="Header__burger" @click="toggleMenu">menu</button>
   
         <nav class="Header__nav">
           <ul class="Header__linklist">
@@ -77,10 +77,47 @@
             </li>
           </ul>
         </nav>
-        <button class="Header__bag">bag</button>
+        <button class="Header__bag" @click="openCartSidebar">
+          <template v-if="cart">
+            bag (${cart.item_count})
+          </template>
+        </button>
       </div>
     </div>
   </header>
+
+  <div :class="{ hidden: miniCart }">Hola</div>
+    
+<script>
+    if (document.querySelector('#header')) {
+        const headerCart = Vue.createApp({
+          delimiters: ['${', '}'],
+          data() {
+            return {
+              cartData: store.state.cartState
+            }
+          },
+          methods: {
+            openCartSidebar() {
+              store.openCartSidebar()
+            },
+
+
+          },
+          computed: {
+            cartOpen() {
+              return store.state.cartSidebar.open
+            },
+            cart() {
+              return this.cartData[0]
+            }
+          },
+          created() {
+            store.getCart()
+          }
+        }).mount('#header')
+      }
+</script>
 
 {% schema %}
 {

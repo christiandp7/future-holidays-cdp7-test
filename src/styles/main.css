@@ -6,6 +6,7 @@
 @import './ui/button.css';
 @import './ui/link.css';
 @import './ui/typography.css';
+@import './ui/transitions.css';
 /* Templates */
 @import './templates/collection.css';
 @import './templates/product.css';
@@ -19,6 +20,9 @@
 /* Cart */
 @import './cart/cart-list.css';
 @import './cart/cart-list-item.css';
+/* Cart Sidebar */
+@import './cart-sidebar/cart-sidebar.css';
+@import './cart-sidebar/cart-sidebar-item.css';
 
 @tailwind components;
 @tailwind utilities;

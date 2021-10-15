@@ -1,0 +1,30 @@
+<div class="CartSidebarItem">
+  <div class="CartSidebarItem__data CartSidebarItem__cell">
+    <div class="CartSidebarItem__card">
+      <div class="CartSidebarItem__image">
+        <img class="CartSidebarItem__image--img" :src="item.image" :alt="item.title" />
+      </div>
+      <div class="CartSidebarItem__details">
+        <div class="CartSidebarItem__details--top">
+          <h4>${ item.title }</h4>
+          <div class="CartSidebarItem__details--options">
+            Black / Small
+          </div>
+        </div>
+        <div class="CartSidebarItem__details--bottom">
+          <div class="QtySelector">
+            <button class="btn btn-icon btn-icon-xs btn-rounded btn-secondary" @click="decrement(item)">-</button>
+            <div class="QtySelector__counter">${ item.quantity }</div>
+            <button class="btn btn-icon btn-icon-xs btn-rounded btn-secondary" @click="increment(item)">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="CartSidebarItem__price CartSidebarItem__cell">
+    <button @click="remove(item)" class="btn btn-icon btn-icon-sm btn-rounded btn-secondary">
+      t
+    </button>
+    <span class="Price__cart-item">${ money(item.price) }</span>
+  </div>
+</div>

@@ -8,4 +8,13 @@
 	.page {
 		@apply my-6 md:my-10;
 	}
+
+	.drawer-backdrop {
+		@apply fixed top-0 left-0;
+		@apply w-full h-screen;
+		@apply bg-mjh-gray/40;
+		@apply z-40;
+		@apply cursor-pointer;
+		backdrop-filter: blur(4px);
+	}
 }
