@@ -8,6 +8,7 @@
 @import './ui/typography.css';
 @import './ui/transitions.css';
 @import './ui/spinner.css';
+@import './ui/swiper.css';
 /* Templates */
 @import './templates/collection.css';
 @import './templates/product.css';
