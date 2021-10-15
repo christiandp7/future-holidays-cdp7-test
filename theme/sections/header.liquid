@@ -1,81 +1,83 @@
+  {%- comment -%}
   {% for link in linklists.main-menu.links %}
-    {% assign child_list_handle = link.title | handleize %}
-    {% if linklists[child_list_handle].links != blank %}
-      <a href="{{ link.url }}">{{ link.title }}</a>
-      [{% for childlink in linklists[child_list_handle].links %}
+  {% assign child_list_handle = link.title | handleize %}
+  {% if linklists[child_list_handle].links != blank %}
+  <a href="{{ link.url }}">{{ link.title }}</a>
+  [{% for childlink in linklists[child_list_handle].links %}
         <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-      {% endfor %}]
-    {% else %}
+        {% endfor %}]
+        {% else %}
       <a href="{{ link.url }}">{{ link.title }}</a>
-    {% endif %}
-  {% endfor %}
-
-  <a href="/cart">cart</a>
-
+      {% endif %}
+      {% endfor %}
+      
+      <a href="/cart">cart</a>
+      
   {% if shop.customer_accounts_enabled %}
-    {% if customer %}
-      <a href="/account">account</a>
+  {% if customer %}
+  <a href="/account">account</a>
       {{ 'log out'  | customer_logout_link }}
-    {% else %}
+      {% else %}
       {{ 'log in ' | customer_login_link }}
       {{ 'register' | customer_register_link }}
-    {% endif %}
-  {% endif %}
-
-
-
-  <header className="Header" data-section-id="{{ section.id }}">
-    <div className="Header__inner container">
-      <div className="Header__left">
-        <button className="Header__search">search</button>
-        <button className="Header__burger">menu</button>
+      {% endif %}
+      {% endif %}
+      {%- endcomment -%}
+      
+      
+      
+  <header class="Header" data-section-id="{{ section.id }}">
+    <div class="Header__inner container">
+      <div class="Header__left">
+        <button class="Header__search">search</button>
+        <button class="Header__burger">menu</button>
   
-        <nav className="Header__nav">
-          <ul className="Header__linklist">
+        <nav class="Header__nav">
+          <ul class="Header__linklist">
             <li>
-              <a className="link" href="#">
+              <a class="link" href="#">
                 New Arrivals
               </a>
             </li>
             <li>
-              <a className="link" href="#">
+              <a class="link" href="#">
                 Accessories
               </a>
             </li>
             <li>
-              <a className="link" href="#">
+              <a class="link" href="#">
                 Shoes
               </a>
             </li>
           </ul>
         </nav>
       </div>
-      <div className="Header__center">
-        <a href="#" className="Header__logo--container">
-          <img src="" className="Header__logo" alt="logo" />
+      <div class="Header__center">
+        <a href="#" class="Header__logo--container">
+          <img src="" class="Header__logo" alt="logo" />
         </a>
       </div>
-      <div className="Header__right">
-        <nav className="Header__nav">
-          <ul className="Header__linklist">
+      <div class="Header__right">
+        <nav class="Header__nav">
+          <ul class="Header__linklist">
             <li>
-              <a className="link" href="#">
+              <a class="link" href="#">
                 Curated Consignment
               </a>
             </li>
             <li>
-              <a className="link" href="#">
+              <a class="link" href="#">
                 Services
               </a>
             </li>
             <li>
-              <a className="link" href="#">
+              <a class="link" href="#">
                 About
               </a>
             </li>
           </ul>
         </nav>
-        <button className="Header__bag">bag</button>
+        <button class="Header__bag">bag</button>
       </div>
     </div>
   </header>
