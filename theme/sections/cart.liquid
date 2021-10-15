@@ -1,0 +1,30 @@
+<div class="Cart container page" data-section-id="{{ section.id }}">
+  <h1 class="Cart__tile">Cart</h1>
+  <p class="Cart__subtitle">
+    <a class="link" href="{{ section.settings.continue_url }}">
+      continue Shopping
+    </a>
+  </p>
+
+  {% if cart.item_count > 0 %}
+    {% render 'cart-list' %}
+  {% else %}
+    <p class="text-center">Your Bag is empty</p>
+  {% endif %}
+
+</div>
+
+{% schema %}
+{
+  "name": "Cart",
+  "class": "cart-section",
+  "settings": [
+    {
+      "type": "url",
+      "id": "continue_url",
+      "label": "Continue Shopping URL",
+      "default": "/collection/all"
+    },
+  ]
+}
+{% endschema %}
