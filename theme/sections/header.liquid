@@ -21,3 +21,73 @@
       {{ 'register' | customer_register_link }}
     {% endif %}
   {% endif %}
+
+
+
+<div class="section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="Header-height-section">
+  <header className="Header">
+    <div className="Header__inner container">
+      <div className="Header__left">
+        <button className="Header__search">search</button>
+        <button className="Header__burger">menu</button>
+  
+        <nav className="Header__nav">
+          <ul className="Header__linklist">
+            <li>
+              <a className="link" href="#">
+                New Arrivals
+              </a>
+            </li>
+            <li>
+              <a className="link" href="#">
+                Accessories
+              </a>
+            </li>
+            <li>
+              <a className="link" href="#">
+                Shoes
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div className="Header__center">
+        <a href="#" className="Header__logo--container">
+          <img src="" className="Header__logo" alt="logo" />
+        </a>
+      </div>
+      <div className="Header__right">
+        <nav className="Header__nav">
+          <ul className="Header__linklist">
+            <li>
+              <a className="link" href="#">
+                Curated Consignment
+              </a>
+            </li>
+            <li>
+              <a className="link" href="#">
+                Services
+              </a>
+            </li>
+            <li>
+              <a className="link" href="#">
+                About
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <button className="Header__bag">bag</button>
+      </div>
+    </div>
+  </header>
+</div>
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "",
+  "settings": [
+    
+  ]
+}
+{% endschema %}
