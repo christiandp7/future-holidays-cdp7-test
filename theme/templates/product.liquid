@@ -40,7 +40,7 @@
   <div class="Product__details">
     <h1 class="Product__title">{{ product.title }}</h1>
     <div class="Product__price">
-      <b>{{ current_variant.price | money }}</b>
+      <span>{{ current_variant.price | money }}</span>
     </div>
     <div class="AddToCartForm">
       {% render 'add-to-cart-form' %}

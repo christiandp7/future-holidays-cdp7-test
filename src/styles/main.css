@@ -7,6 +7,7 @@
 @import './ui/link.css';
 @import './ui/typography.css';
 @import './ui/transitions.css';
+@import './ui/spinner.css';
 /* Templates */
 @import './templates/collection.css';
 @import './templates/product.css';
