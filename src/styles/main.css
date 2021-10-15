@@ -1,5 +1,8 @@
 @import './base.css';
 @import './base/fonts.css';
+@tailwind components;
+@tailwind utilities;
+
 /* UI */
 @import './ui/layout.css';
 @import './ui/button.css';
@@ -9,6 +12,3 @@
 @import './common/header.css';
 @import './common/footer.css';
 @import './common/content.css';
-
-@tailwind components;
-@tailwind utilities;
