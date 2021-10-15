@@ -1,0 +1,14 @@
+@layer components {
+	.page-title {
+		@apply text-center mt-2 md:mt-4 mb-4 md:mb-6;
+		@apply text-3xl md:text-h2;
+	}
+
+	.page-subtitle {
+		@apply text-center mb-8;
+	}
+
+	.h4 {
+		@apply uppercase tracking-wider mb-2;
+	}
+}

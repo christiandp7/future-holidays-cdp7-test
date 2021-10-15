@@ -1,0 +1,66 @@
+@layer components {
+	.btn {
+		@apply text-tiny uppercase text-mjh-white tracking-widest text-center;
+		@apply bg-primary py-3 px-6;
+		@apply border-0;
+		@apply hover:bg-mjh-white hover:text-primary-text;
+		@apply outline-none focus:outline-none focus:ring-2 focus:ring-primary-text;
+		@apply active:bg-mjh-white active:text-primary-text;
+		@apply transition-colors duration-300;
+	}
+
+	/* btn modifiers */
+	.btn-full {
+		@apply w-full;
+	}
+	.btn-sm {
+		@apply py-2 px-4;
+	}
+	.btn-lg {
+		@apply py-4 px-8;
+	}
+
+	/* btn variants */
+	.btn-icon {
+		@apply w-[30px] h-[30px];
+		@apply flex justify-center items-center;
+		@apply hover:bg-mjh-gray active:bg-mjh-gray;
+		@apply p-0;
+		line-height: 1;
+		&.btn-icon-sm {
+			@apply w-[24px] h-[24px] text-tiny;
+		}
+	}
+
+	.btn-rounded {
+		@apply rounded-full;
+	}
+
+	.btn-square {
+		@apply w-[30px] h-[30px];
+		@apply flex justify-center items-center;
+		@apply hover:bg-mjh-gray active:bg-mjh-gray;
+		@apply p-0;
+		line-height: 1;
+	}
+
+	.btn-with-icon {
+		@apply relative p-0;
+		@apply flex justify-center items-center;
+		@apply min-w-[200px] h-[50px];
+		line-height: 1;
+	}
+	.btn-secondary {
+		@apply bg-mjh-white text-primary-text;
+		@apply hover:bg-mjh-gray;
+	}
+	.btn-transparent {
+		@apply bg-transparent text-primary-text;
+		@apply hover:bg-mjh-gray;
+	}
+	.btn-secondary-hollow {
+		@apply bg-mjh-white text-primary-text;
+		@apply hover:bg-mjh-gray;
+		@apply border-primary-text border-solid border;
+	}
+}
