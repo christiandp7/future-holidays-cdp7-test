@@ -6,14 +6,14 @@
       </div>
       <div class="CartListItem__details">
         <div class="CartListItem__details--top">
-          <h4>${ item.title }</h4>
+          <h4>${ item.product_title }</h4>
           <div class="CartListItem__details--options">
-            Black / Small
+            ${ item.variant_title }
           </div>
         </div>
         <div class="CartListItem__details--bottom">
           <button @click="remove(item)" class="btn btn-with-icon btn-secondary-hollow hidden lg:flex">
-            Remove
+            Remove <span class="absolute top-1/2 right-3 -translate-y-1/2">{% render 'icon-cross' %}</span>
           </button>
           <div class="QtySelector lg:hidden">
             <button class="btn btn-icon btn-icon-xs btn-rounded btn-secondary" @click="decrement(item)">-</button>
@@ -26,7 +26,7 @@
   </div>
   <div class="CartListItem__price CartListItem__cell">
     <button @click="remove(item)" class="btn btn-icon btn-rounded btn-secondary lg:hidden">
-      t
+      {% render 'icon-trash', size: 20 %}
     </button>
     <span class="Price__cart-item">${ money(item.price) }</span>
   </div>

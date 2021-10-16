@@ -11,7 +11,7 @@
 			@apply w-2/12 lg:w-1/6;
 			@apply justify-between lg:justify-center;
 			@apply flex-col lg:flex-row;
-			@apply items-center lg:items-end;
+			@apply items-end;
 		}
 		&.CartListItem__quantity,
 		&.CartListItem__total {

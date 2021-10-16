@@ -8,7 +8,7 @@
           </a>
         </h3>
         <button @click="closeCartSidebar" class="btn btn-icon btn-transparent btn-rounded">
-          X
+          {% render 'icon-cross' %}
         </button>
       </div>
     </div>
@@ -39,7 +39,9 @@
     </template>
     
     <template v-else>
-      <p class="CartSidebar__empty text-center">Your Bag is empty</p>
+      <div class="CartSidebar__empty">
+        <p class="text-center">Your Cart is empty</p>
+      </div>
     </template>
   </div>
 

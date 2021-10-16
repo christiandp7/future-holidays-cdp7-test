@@ -6,9 +6,9 @@
       </div>
       <div class="CartSidebarItem__details">
         <div class="CartSidebarItem__details--top">
-          <h4>${ item.title }</h4>
+          <h4>${ item.product_title }</h4>
           <div class="CartSidebarItem__details--options">
-            Black / Small
+            ${ item.variant_title }
           </div>
         </div>
         <div class="CartSidebarItem__details--bottom">
@@ -23,8 +23,8 @@
   </div>
   <div class="CartSidebarItem__price CartSidebarItem__cell">
     <button @click="remove(item)" class="btn btn-icon btn-icon-sm btn-rounded btn-secondary">
-      t
+      {% render 'icon-trash', size: 20 %}
     </button>
-    <span class="Price__cart-item">${ money(item.price) }</span>
+    <span class="Price__cart-item">${ money(item.final_line_price) }</span>
   </div>
 </div>

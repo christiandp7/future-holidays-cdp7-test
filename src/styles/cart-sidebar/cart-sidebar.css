@@ -29,6 +29,13 @@
 		@apply px-5;
 	}
 
+	/* Bag Empty */
+	& .CartSidebar__empty {
+		@apply flex justify-center items-center;
+		@apply flex-grow;
+		@apply px-5;
+	}
+
 	/* Cart footer */
 	& .CartSidebar__footer {
 		@apply flex flex-wrap;
