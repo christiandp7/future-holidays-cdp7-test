@@ -24,7 +24,8 @@
       {% endif %}
       {%- endcomment -%}
       
-      
+{% assign links_length = linklists.header-menu.links | size %}
+{% assign half_length = links_length | divided_by: 2 | ceil %}
       
   <header id="header" class="Header" data-section-id="{{ section.id }}">
     <div class="Header__inner container">
@@ -34,47 +35,35 @@
   
         <nav class="Header__nav">
           <ul class="Header__linklist">
-            <li>
-              <a class="link" href="#">
-                New Arrivals
-              </a>
-            </li>
-            <li>
-              <a class="link" href="#">
-                Accessories
-              </a>
-            </li>
-            <li>
-              <a class="link" href="#">
-                Shoes
-              </a>
-            </li>
+            {% for link in linklists.header-menu.links %}
+              {% if forloop.index <= half_length %}
+                <li>
+                  <a class="link" href="{{ link.url }}">
+                    {{ link.title }}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
           </ul>
         </nav>
       </div>
       <div class="Header__center">
-        <a href="#" class="Header__logo--container">
+        <a href="/" class="Header__logo--container">
           <img src="{{ section.settings.logo | img_url: '130x' }}" class="Header__logo" alt="logo" />
         </a>
       </div>
       <div class="Header__right">
         <nav class="Header__nav">
           <ul class="Header__linklist">
-            <li>
-              <a class="link" href="#">
-                Curated Consignment
-              </a>
-            </li>
-            <li>
-              <a class="link" href="#">
-                Services
-              </a>
-            </li>
-            <li>
-              <a class="link" href="#">
-                About
-              </a>
-            </li>
+            {% for link in linklists.header-menu.links %}
+              {% if forloop.index > half_length %}
+                <li>
+                  <a class="link" href="{{ link.url }}">
+                    {{ link.title }}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
           </ul>
         </nav>
         <button class="Header__bag" @click="openCartSidebar">
