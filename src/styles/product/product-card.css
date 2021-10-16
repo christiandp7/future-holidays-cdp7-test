@@ -15,9 +15,8 @@
 		@apply py-2;
 	}
 	& .ProductCard__title {
-		@apply text-body;
 	}
 	& .ProductCard__price {
-		@apply font-bold text-tiny;
+		@apply font-bold text-body;
 	}
 }

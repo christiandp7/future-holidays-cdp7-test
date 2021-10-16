@@ -9,9 +9,11 @@
       {% endfor %}
     </div>
     
-    {% if paginate.pages > 1 %}
-      {{ paginate | default_pagination }}
-    {% endif %}
+    <div class="Pagination">
+      {% if paginate.pages > 1 %}
+        {{ paginate | default_pagination }}
+      {% endif %}
+    </div>
   {% endpaginate %}
 </div>
 
