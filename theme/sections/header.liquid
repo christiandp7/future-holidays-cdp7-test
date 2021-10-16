@@ -24,62 +24,54 @@
       {% endif %}
       {%- endcomment -%}
       
-      
+{% assign links_length = linklists.header-menu.links | size %}
+{% assign half_length = links_length | divided_by: 2 | ceil %}
       
   <header id="header" class="Header" data-section-id="{{ section.id }}">
     <div class="Header__inner container">
       <div class="Header__left">
-        <button class="Header__search">search</button>
-        <button class="Header__burger">menu</button>
+        <button class="Header__search">{% render 'icon-search' %}</button>
+        <button class="Header__burger" @click="openMenuMobile">{% render 'icon-burger' %}</button>
   
         <nav class="Header__nav">
           <ul class="Header__linklist">
-            <li>
-              <a class="link" href="#">
-                New Arrivals
-              </a>
-            </li>
-            <li>
-              <a class="link" href="#">
-                Accessories
-              </a>
-            </li>
-            <li>
-              <a class="link" href="#">
-                Shoes
-              </a>
-            </li>
+            {% for link in linklists.header-menu.links %}
+              {% if forloop.index <= half_length %}
+                <li>
+                  <a class="link" href="{{ link.url }}">
+                    {{ link.title }}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
           </ul>
         </nav>
       </div>
       <div class="Header__center">
-        <a href="#" class="Header__logo--container">
+        <a href="/" class="Header__logo--container">
           <img src="{{ section.settings.logo | img_url: '130x' }}" class="Header__logo" alt="logo" />
         </a>
       </div>
       <div class="Header__right">
         <nav class="Header__nav">
           <ul class="Header__linklist">
-            <li>
-              <a class="link" href="#">
-                Curated Consignment
-              </a>
-            </li>
-            <li>
-              <a class="link" href="#">
-                Services
-              </a>
-            </li>
-            <li>
-              <a class="link" href="#">
-                About
-              </a>
-            </li>
+            {% for link in linklists.header-menu.links %}
+              {% if forloop.index > half_length %}
+                <li>
+                  <a class="link" href="{{ link.url }}">
+                    {{ link.title }}
+                  </a>
+                </li>
+              {% endif %}
+            {% endfor %}
           </ul>
         </nav>
         <button class="Header__bag" @click="openCartSidebar">
-          <template v-if="cart">
-            bag (${cart.item_count})
+          {% render 'icon-bag' %} 
+          <template v-if="cart && cart.items.length > 0">
+            <span class="Header__bag--badge">
+              ${cart.item_count}
+            </span>
           </template>
         </button>
       </div>
@@ -99,11 +91,17 @@
             openCartSidebar() {
               store.openCartSidebar()
             },
+            openMenuMobile() {
+              store.openMenuMobile()
+            },
 
           },
           computed: {
             cartOpen() {
               return store.state.cartSidebar.open
+            },
+            menuOpen() {
+              return store.state.menuMobile.open
             },
             cart() {
               return this.cartData[0]

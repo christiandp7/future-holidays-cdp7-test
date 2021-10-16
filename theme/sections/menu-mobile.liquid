@@ -1,0 +1,43 @@
+<div id="menu-mobile-component">
+  <div class="MobileMenu" :class="{ 'translate-x-0': menuOpen }">
+    <div class="MobileMenu__header">
+      <button @click="closeMenuMobile" class="btn btn-icon btn-transparent btn-rounded">
+        {% render 'icon-cross' %}
+      </button>
+    </div>
+    <nav class="MobileHeader__body">
+      <ul class="MobileHeader__linklist">
+        {% for link in linklists.main-menu.links %}
+          <li>
+            <a class="link" href="{{ link.url }}">
+              {{ link.title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+
+  <transition name="fade">
+    <div class="drawer-backdrop" @click="closeMenuMobile" v-if="menuOpen"></div>
+  </transition>
+
+
+</div>
+
+<script>
+  const menuMobile = Vue.createApp({
+    delimiters: ['${', '}'],
+    data() {},
+    methods: {
+      closeMenuMobile() {
+        store.closeMenuMobile()
+      },
+    },
+    computed: {
+      menuOpen() {
+        return store.state.menuMobile.open
+      },
+    },
+  }).mount('#menu-mobile-component')
+</script>

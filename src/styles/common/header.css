@@ -48,6 +48,14 @@
 		@apply lg:hidden;
 	}
 	& .Header__bag {
-		@apply p-1 pr-0;
+		@apply relative p-1 pr-0;
+		& .Header__bag--badge {
+			@apply absolute;
+			top: -1px;
+			right: -5px;
+			@apply w-[14px] h-[14px] rounded-full bg-primary;
+			@apply flex justify-center items-center;
+			@apply text-[8px] text-mjh-white;
+		}
 	}
 }

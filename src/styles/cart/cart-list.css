@@ -50,3 +50,8 @@
 		}
 	}
 }
+
+.CartList__empty {
+	@apply w-full h-[35vh];
+	@apply flex justify-center items-center;
+}

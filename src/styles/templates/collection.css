@@ -15,8 +15,23 @@
 	@apply flex justify-center items-center;
 	@apply mt-6 mb-10;
 
-	& a,
-	& a:not(last-child) {
-		@apply mr-2;
+	& .page {
+		@apply mr-3;
+		& a {
+			@apply btn btn-square;
+		}
+		&.current {
+			@apply btn btn-square;
+			@apply bg-mjh-gray text-primary-text;
+		}
+	}
+
+	& .next {
+		& a {
+			@apply flex justify-center items-center;
+			@apply h-[30px] w-auto px-2;
+			@apply text-mjh-white hover:text-primary-text;
+			@apply bg-primary hover:bg-mjh-gray;
+		}
 	}
 }
