@@ -1,0 +1,14 @@
+.Welcome {
+	@apply text-center;
+	@apply py-24 px-3;
+
+	& h1 {
+		@apply text-4xl mb-10 text-center;
+	}
+	& h3 {
+		@apply text-lg mb-8 text-center;
+	}
+
+	& .Welcome__buttons {
+	}
+}

@@ -1,0 +1,51 @@
+<div class="Welcome section--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="Welcome-height-section">
+  <div class="container">
+    <h1>{{ section.settings.title }}</h1>
+    <h3>{{ section.settings.text }}</h3>
+    <div class="Welcome__buttons">
+      <a class="btn btn-lg max-w-[260px] mx-auto" href="{{ section.settings.btn_url }}">{{ section.settings.btn_text }}</a>
+    </div>
+
+    <p class="mt-5 text-tiny text-gray-500">
+      Coded by<a target="_blank" class="link" href="https://github.com/christiandp7">christiandp7</a>
+    </p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Welcome",
+  "class": "welcome-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Welcome title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Description",
+      "default": "<p>Write your description here</p>"
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+      "default": "Shop All"
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Welcome",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}

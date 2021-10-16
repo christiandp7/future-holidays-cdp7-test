@@ -28,6 +28,8 @@
 /* Cart Sidebar */
 @import './cart-sidebar/cart-sidebar.css';
 @import './cart-sidebar/cart-sidebar-item.css';
+/* Home */
+@import './home/welcome.css';
 
 @tailwind components;
 @tailwind utilities;

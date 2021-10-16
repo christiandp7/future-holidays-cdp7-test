@@ -1032,7 +1032,7 @@ p, a, li, span {
 	color: rgba(0, 0, 0, var(--tw-text-opacity));
 }
 
-.Pagination .next a {
+.Pagination .next a, .Pagination .prev a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -1044,19 +1044,23 @@ p, a, li, span {
 	color: rgba(250, 249, 246, var(--tw-text-opacity));
 }
 
-.Pagination .next a:hover {
+.Pagination .next a:hover, .Pagination .prev a:hover {
 	--tw-text-opacity: 1;
 	color: rgba(0, 0, 0, var(--tw-text-opacity));
 }
 
-.Pagination .next a {
+.Pagination .next a, .Pagination .prev a {
 	--tw-bg-opacity: 1;
 	background-color: rgba(39, 62, 34, var(--tw-bg-opacity));
 }
 
-.Pagination .next a:hover {
+.Pagination .next a:hover, .Pagination .prev a:hover {
 	--tw-bg-opacity: 1;
 	background-color: rgba(232, 230, 225, var(--tw-bg-opacity));
+}
+
+.Pagination .prev {
+	margin-right: 0.75rem;
 }
 
 .Product {
@@ -1568,9 +1572,15 @@ p, a, li, span {
 }
 
 .ProductCard .ProductCard__image img {
-	height: 100%;
 	-o-object-fit: cover;
 	   object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+
+	.ProductCard .ProductCard__image img {
+		height: 100%;
+	}
 }
 
 .ProductCard .ProductCard__details {
@@ -2235,6 +2245,33 @@ p, a, li, span {
 	line-height: 1.75rem;
 }
 
+/* Home */
+
+.Welcome {
+	text-align: center;
+	padding-top: 6rem;
+	padding-bottom: 6rem;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+}
+
+.Welcome h1 {
+	margin-bottom: 2.5rem;
+	text-align: center;
+	font-size: 2.25rem;
+	line-height: 2.5rem;
+}
+
+.Welcome h3 {
+	margin-bottom: 2rem;
+	text-align: center;
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+}
+
+.Welcome .Welcome__buttons {
+	}
+
 .container {
 	width: 100%;
 }
@@ -2549,12 +2586,21 @@ p, a, li, span {
 	right: 0.75rem;
 }
 
+.mx-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .mt-1 {
 	margin-top: 0.25rem;
 }
 
 .mb-4 {
 	margin-bottom: 1rem;
+}
+
+.mt-5 {
+	margin-top: 1.25rem;
 }
 
 .mt-8 {
@@ -2577,6 +2623,10 @@ p, a, li, span {
 	display: none;
 }
 
+.max-w-\[260px\] {
+	max-width: 260px;
+}
+
 .translate-x-0 {
 	--tw-translate-x: 0px;
 	transform: var(--tw-transform);
@@ -2597,6 +2647,15 @@ p, a, li, span {
 
 .text-body {
 	font-size: 13px;
+}
+
+.text-tiny {
+	font-size: 11px;
+}
+
+.text-gray-500 {
+	--tw-text-opacity: 1;
+	color: rgba(107, 114, 128, var(--tw-text-opacity));
 }
 
 .transition {
