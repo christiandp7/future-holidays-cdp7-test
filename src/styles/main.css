@@ -17,6 +17,7 @@
 @import './common/header.css';
 @import './common/footer.css';
 @import './common/content.css';
+@import './common/menu-mobile.css';
 /* Product */
 @import './product/product-card.css';
 @import './product/product-option.css';

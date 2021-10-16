@@ -30,7 +30,7 @@
     <div class="Header__inner container">
       <div class="Header__left">
         <button class="Header__search">{% render 'icon-search' %}</button>
-        <button class="Header__burger">{% render 'icon-burger' %}</button>
+        <button class="Header__burger" @click="openMenuMobile">{% render 'icon-burger' %}</button>
   
         <nav class="Header__nav">
           <ul class="Header__linklist">
@@ -102,11 +102,17 @@
             openCartSidebar() {
               store.openCartSidebar()
             },
+            openMenuMobile() {
+              store.openMenuMobile()
+            },
 
           },
           computed: {
             cartOpen() {
               return store.state.cartSidebar.open
+            },
+            menuOpen() {
+              return store.state.menuMobile.open
             },
             cart() {
               return this.cartData[0]

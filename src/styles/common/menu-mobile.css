@@ -1,0 +1,25 @@
+.MobileMenu {
+	@apply fixed top-0 left-0;
+	@apply w-[210px] h-screen;
+	@apply bg-mjh-cream;
+	@apply z-50 shadow-xl;
+	@apply flex flex-col;
+	@apply overflow-hidden;
+	@apply -translate-x-full;
+	@apply transition-transform duration-300;
+
+	& .MobileMenu__header {
+		@apply flex justify-end;
+		@apply pt-6 pb-3 px-3;
+	}
+	& .MobileHeader__body {
+		@apply flex justify-center items-center;
+		flex-grow: 0.5;
+	}
+	& .MobileHeader__linklist {
+		@apply text-center;
+		& li {
+			@apply mb-4;
+		}
+	}
+}

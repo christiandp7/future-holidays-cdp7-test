@@ -5,6 +5,9 @@ const store = Vue.reactive({
 		cartSidebar: {
 			open: false,
 		},
+		menuMobile: {
+			open: false,
+		},
 	},
 
 	getCart() {
@@ -23,5 +26,12 @@ const store = Vue.reactive({
 	},
 	closeCartSidebar() {
 		this.state.cartSidebar.open = false
+	},
+
+	openMenuMobile() {
+		this.state.menuMobile.open = true
+	},
+	closeMenuMobile() {
+		this.state.menuMobile.open = false
 	},
 })

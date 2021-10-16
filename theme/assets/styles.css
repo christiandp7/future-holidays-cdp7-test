@@ -1339,6 +1339,52 @@ p, a, li, span {
 	padding-bottom: 2.5rem;
 }
 
+.MobileMenu {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height: 100vh;
+	width: 210px;
+	--tw-bg-opacity: 1;
+	background-color: rgba(245, 243, 238, var(--tw-bg-opacity));
+	z-index: 50;
+	--tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	--tw-translate-x: -100%;
+	transform: var(--tw-transform);
+	transition-property: transform;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+	transition-duration: 300ms;
+}
+
+.MobileMenu .MobileMenu__header {
+	display: flex;
+	justify-content: flex-end;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	padding-top: 1.5rem;
+	padding-bottom: 0.75rem;
+}
+
+.MobileMenu .MobileHeader__body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+		flex-grow: 0.5;
+}
+
+.MobileMenu .MobileHeader__linklist {
+	text-align: center;
+}
+
+.MobileMenu .MobileHeader__linklist li {
+	margin-bottom: 1rem;
+}
+
 /* Product */
 
 .ProductCard {
