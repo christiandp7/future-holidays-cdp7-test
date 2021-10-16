@@ -26,12 +26,17 @@
 		}
 	}
 
-	& .next {
+	& .next,
+	& .prev {
 		& a {
 			@apply flex justify-center items-center;
 			@apply h-[30px] w-auto px-2;
 			@apply text-mjh-white hover:text-primary-text;
 			@apply bg-primary hover:bg-mjh-gray;
 		}
+	}
+
+	& .prev {
+		@apply mr-3;
 	}
 }

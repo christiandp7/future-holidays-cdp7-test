@@ -8,7 +8,7 @@
 	& .ProductCard__image {
 		@apply flex-grow;
 		& img {
-			@apply h-full object-cover;
+			@apply lg:h-full object-cover;
 		}
 	}
 	& .ProductCard__details {
