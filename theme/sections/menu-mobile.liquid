@@ -1,7 +1,7 @@
 <div id="menu-mobile-component">
   <div class="MobileMenu" :class="{ 'translate-x-0': menuOpen }">
     <div class="MobileMenu__header">
-      <button role="button" aria-label="Close Mobile Menu" @click="closeMenuMobile" class="btn btn-icon btn-transparent btn-rounded">
+      <button role="button" aria-labelledby="Close Mobile Menu" @click="closeMenuMobile" class="btn btn-icon btn-transparent btn-rounded">
         {% render 'icon-cross' %}
       </button>
     </div>
@@ -9,7 +9,7 @@
       <ul class="MobileHeader__linklist">
         {% for link in linklists.main-menu.links %}
           <li>
-            <a class="link" href="{{ link.url }}">
+            <a class="link" role="link" href="{{ link.url }}">
               {{ link.title }}
             </a>
           </li>

@@ -7,7 +7,7 @@
             Cart
           </a>
         </h3>
-        <button @click="closeCartSidebar" class="btn btn-icon btn-transparent btn-rounded">
+        <button role="butotn" aria-labelledby="Close cart" @click="closeCartSidebar" class="btn btn-icon btn-transparent btn-rounded">
           {% render 'icon-cross' %}
         </button>
       </div>
@@ -32,7 +32,7 @@
             Shipping, taxes, and discounts codes calculated at checkout.
           </p>
           <div class="CartSidebar__summary--buttons">
-            <button class="btn btn-full">checkout</button>
+            <button role="button" aria-labelledby="Checkout" class="btn btn-full">checkout</button>
           </div>
         </div>
       </div>

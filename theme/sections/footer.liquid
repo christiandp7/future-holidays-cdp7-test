@@ -2,30 +2,30 @@
   <div class="container">
     <div class="Footer__content">
       <div class="Footer__logo--container">
-        <a href="#" class="Footer__logo--link">
+        <a href="#" role="link" class="Footer__logo--link">
           <img src="{{ section.settings.logo | img_url: '350x' }}" class="Footer__logo" alt="logo" />
         </a>
       </div>
       <div class="Footer__nav">
         <ul class="Footer__linklist">
-          <li><a class="link" href="#">New Arrivals</a></li>
-          <li><a class="link" href="#">Accessories</a></li>
-          <li><a class="link" href="#">Shoes</a></li>
+          <li><a class="link" role="link" href="#">New Arrivals</a></li>
+          <li><a class="link" role="link" href="#">Accessories</a></li>
+          <li><a class="link" role="link" href="#">Shoes</a></li>
           <li>
-            <a class="link" href="#">Curated Vintage</a>
+            <a class="link" role="link" href="#">Curated Vintage</a>
           </li>
         </ul>
       </div>
       <div class="Footer__nav">
         <ul class="Footer__linklist">
-          <li><a class="link" href="#">Services</a></li>
-          <li><a class="link" href="#">About</a></li>
+          <li><a class="link" role="link" href="#">Services</a></li>
+          <li><a class="link" role="link" href="#">About</a></li>
         </ul>
       </div>
       <div class="Footer__nav">
         <ul class="Footer__linklist">
           <li>
-            <a class="link" href="#">
+            <a class="link" role="link" href="#">
               Shipping &amp; Returns
             </a>
           </li>
@@ -43,12 +43,12 @@
         </p>
         <form action="" class="NewsletterForm">
           <div class="NewsletterForm__input-text--row">
-            <input type="text" class="NewsletterForm_input-text" placeholder="Name" autocomplete="name" name="name"
+            <input type="text" role="textbox" aria-label="Name textbox" class="NewsletterForm_input-text" placeholder="Name" autocomplete="name" name="name"
               required="" />
-            <input type="text" class="NewsletterForm_input-text" placeholder="Email address" autocomplete="email"
+            <input type="text" role="textbox" aria-label="Email textbox" class="NewsletterForm_input-text" placeholder="Email address" autocomplete="email"
               name="email" required="" />
           </div>
-          <button type="submit" class="btn btn-full btn-lg">
+          <button type="submit" role="button" aria-label="Submit button" class="btn btn-full btn-lg">
             Submit
           </button>
         </form>

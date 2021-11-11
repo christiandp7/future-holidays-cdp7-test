@@ -13,16 +13,16 @@
         </div>
         <div class="CartSidebarItem__details--bottom">
           <div class="QtySelector">
-            <button class="btn btn-icon btn-icon-xs btn-rounded btn-secondary" @click="decrement(item)">-</button>
+            <button role="button" aria-labelledby="Add one" class="btn btn-icon btn-icon-xs btn-rounded btn-secondary" @click="decrement(item)">-</button>
             <div class="QtySelector__counter">${ item.quantity }</div>
-            <button class="btn btn-icon btn-icon-xs btn-rounded btn-secondary" @click="increment(item)">+</button>
+            <button role="button" aria-labelledby="Remove one" class="btn btn-icon btn-icon-xs btn-rounded btn-secondary" @click="increment(item)">+</button>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="CartSidebarItem__price CartSidebarItem__cell">
-    <button @click="remove(item)" class="btn btn-icon btn-icon-sm btn-rounded btn-secondary">
+    <button @click="remove(item)" role="button" aria-labelledby="Remove from Cart" class="btn btn-icon btn-icon-sm btn-rounded btn-secondary">
       {% render 'icon-trash', size: 20 %}
     </button>
     <span class="Price__cart-item">${ money(item.final_line_price) }</span>

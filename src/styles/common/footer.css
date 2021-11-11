@@ -36,6 +36,10 @@
 		@apply mt-6 mb-3;
 		& > input {
 			@apply w-[48%];
+			@apply text-primary-dark;
+			&:placeholder {
+				@apply text-primary-dark;
+			}
 		}
 		& .NewsletterForm_input-text {
 			@apply focus:border-black;
