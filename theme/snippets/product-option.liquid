@@ -1,5 +1,5 @@
 <div class="ProdcutOption">
-  <h3 class="ProducOption__name">${ option.name }</h3>
+  <h2 class="ProducOption__name">${ option.name }</h2>
   <div class="ProductOption__label" @click="option.visible = !option.visible" :class="{ labelActive: option.visible }">
     <span>${ selected[i] }</span>
     <i class="ProductOption__label--arrow">{% render 'icon-chevron-down' %}</i>

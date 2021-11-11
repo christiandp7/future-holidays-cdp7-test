@@ -4,9 +4,9 @@
       <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}" />
     </div>
     <div class="ProductCard__details">
-      <h3 class="ProductCard__title">
+      <h2 class="ProductCard__title">
         {{ product.title }}
-      </h3>
+      </h2>
       <div class="ProductCard__price">{{ product.price | money }}</div>
     </div>
   </a>
