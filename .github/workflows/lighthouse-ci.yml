@@ -13,5 +13,5 @@ jobs:
         app_password: ${{ secrets.SHOP_APP_PASSWORD }}
         store: ${{ secrets.SHOP_STORE }}
         lhci_github_app_token: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
-        lhci_min_score_performance: 0.75
+        lhci_min_score_performance: 0.70
         lhci_min_score_accessibility: 0.85
