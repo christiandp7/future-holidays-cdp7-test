@@ -1,7 +1,7 @@
 <div id="menu-mobile-component">
   <div class="MobileMenu" :class="{ 'translate-x-0': menuOpen }">
     <div class="MobileMenu__header">
-      <button @click="closeMenuMobile" class="btn btn-icon btn-transparent btn-rounded">
+      <button role="button" aria-label="Close Mobile Menu" @click="closeMenuMobile" class="btn btn-icon btn-transparent btn-rounded">
         {% render 'icon-cross' %}
       </button>
     </div>

@@ -30,8 +30,8 @@
   <header id="header" class="Header" data-section-id="{{ section.id }}">
     <div class="Header__inner container">
       <div class="Header__left">
-        <button class="Header__search">{% render 'icon-search' %}</button>
-        <button class="Header__burger" @click="openMenuMobile">{% render 'icon-burger' %}</button>
+        <button class="Header__search" role="button" aria-label="Search Button">{% render 'icon-search' %}</button>
+        <button class="Header__burger" role="button" aria-label="Open Mobile Menu" @click="openMenuMobile">{% render 'icon-burger' %}</button>
   
         <nav class="Header__nav">
           <ul class="Header__linklist">
@@ -66,7 +66,7 @@
             {% endfor %}
           </ul>
         </nav>
-        <button class="Header__bag" @click="openCartSidebar">
+        <button class="Header__bag" role="button" aria-label="Open Cart Button" @click="openCartSidebar">
           {% render 'icon-bag' %} 
           <template v-if="cart && cart.items.length > 0">
             <span class="Header__bag--badge">
