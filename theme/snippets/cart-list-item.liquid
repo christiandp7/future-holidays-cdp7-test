@@ -25,7 +25,7 @@
     </div>
   </div>
   <div class="CartListItem__price CartListItem__cell">
-    <button role="button" aria-labelledby="Remove from Cart" @click="remove(item)" class="btn btn-icon btn-rounded btn-secondary lg:hidden">
+    <button role="button" aria-label="Remove from Cart" @click="remove(item)" class="btn btn-icon btn-rounded btn-secondary lg:hidden">
       {% render 'icon-trash', size: 20 %}
     </button>
     <span class="Price__cart-item">${ money(item.price) }</span>

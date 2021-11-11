@@ -28,7 +28,7 @@
     </div>
   </template>
 
-  <button role="button" aria-labelledby="Add to cart" @click="addToCart" type="submit" name="add" class="btn btn-full btn-lg add-to-cart-button mt-8">
+  <button role="button" aria-label="Add to cart" @click="addToCart" type="submit" name="add" class="btn btn-full btn-lg add-to-cart-button mt-8">
     <span :class="{ hidden: loading }">Add to cart</span> <div class="spinner" :class="{ hidden: !loading }"></div>
   </button>
 </form>
